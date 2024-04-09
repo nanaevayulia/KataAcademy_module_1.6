@@ -1,0 +1,56 @@
+@import 'variables';
+
+.header {
+  height: 88px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white-color;
+  padding: 0 16px;
+
+  &__part {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    &::after {
+      content: '';
+      background-color: $border-gray-color;
+      width: 2px;
+      height: 32px;
+      border-radius: 1px;
+      display: block;
+      margin-left: 16px;
+    }
+  }
+
+  &__separator {
+    background-color: $border-gray-color;
+    width: 2px;
+    height: 32px;
+    border-radius: 1px;
+    margin: 0 4px;
+    display: none;
+  }
+}
+
+// Экраны шире 768px
+@media screen and (min-width: 768px) {
+  .header {
+    &__separator {
+      display: block;
+    }
+  }
+}
+
+// Экраны шире 1440px
+@media screen and (min-width: 1440px) {
+  .header {
+    display: none;
+  }
+}

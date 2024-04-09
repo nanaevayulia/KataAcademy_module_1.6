@@ -1,0 +1,64 @@
+@import 'variables.scss';
+
+.icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &--menu {
+    background-image: url(../img/icon_menu.svg);
+  }
+
+  &--phone {
+    background-image: url(../img/icon_phone.svg);
+    display: none;
+  }
+
+  &--chat {
+    background-image: url(../img/icon_chat.svg);
+    display: none;
+  }
+
+  &--profile {
+    background-image: url(../img/icon_profile.svg);
+    display: none;
+  }
+
+  &--settings {
+    background-image: url(../img/icon_settings.svg);
+  }
+
+  &--checkstatus {
+    background-image: url(../img/icon_checkstatus.svg);
+  }
+
+  &--close {
+    background-image: url(../img/icon_close.svg);
+  }
+
+  &--search {
+    background-image: url(../img/icon_search.svg);
+    margin-left: auto;
+  }
+}
+
+// Экраны шире 768px
+@media screen and (min-width: 768px) {
+  .icon {
+    &--phone {
+      display: block;
+    }
+
+    &--chat {
+      display: block;
+    }
+
+    &--profile {
+      display: block;
+    }
+  }
+}

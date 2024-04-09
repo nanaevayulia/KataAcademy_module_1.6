@@ -1,0 +1,28 @@
+@import 'variables.scss';
+
+.logo {
+  &__img {
+    width: 96px;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    &::after {
+      content: '';
+      display: none;
+    }
+
+    &::before {
+      content: '';
+      background-color: $border-gray-color;
+      width: 2px;
+      height: 32px;
+      border-radius: 1px;
+      display: block;
+      margin-right: 20px;
+      margin-left: 4px;
+    }
+  }
+}

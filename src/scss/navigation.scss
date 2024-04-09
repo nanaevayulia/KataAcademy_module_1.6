@@ -1,0 +1,60 @@
+@import 'variables.scss';
+
+.navigation {
+  display: flex;
+  list-style: none;
+  white-space: nowrap;
+  overflow: auto;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: $font-color-gray;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+
+  &:first-child {
+    padding-left: 16px;
+  }
+
+  &__item {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    transition: 0.2s;
+
+    &--active {
+      background-color: $white-color;
+      border: 2px solid $lagoon-color;
+    }
+
+    &:hover {
+      background-color: rgba($color: $white-color, $alpha: 0.6);
+      border: 2px solid rgba($color: $lagoon-color, $alpha: 0.4);
+    }
+  }
+}
+
+// Экраны шире 768px
+@media screen and (min-width: 768px) {
+  .navigation {
+    &:first-child {
+      padding-left: 24px;
+    }
+  }
+}
+
+// Экраны шире 1440px
+@media screen and (min-width: 1440px) {
+  .navigation {
+    overflow: visible;
+    flex-wrap: wrap;
+    padding-bottom: 0;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &__item {
+      padding: 6px 20px;
+    }
+  }
+}

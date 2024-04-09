@@ -1,0 +1,49 @@
+@import 'variables.scss';
+
+.swiper {
+  &-slide {
+    height: 72px;
+    padding: 16px;
+    border: 1px solid $border-gray-color;
+    border-radius: 6px;
+    background-color: $white-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    box-sizing: border-box;
+
+    &::after {
+      content: '';
+      background: url(../img/go.svg) no-repeat;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &-pagination {
+    margin-bottom: 26px;
+
+    &-bullet {
+      height: 12px;
+      width: 12px;
+      background-color: #dddddd;
+
+      &-active {
+        background-color: #b5b6bc;
+      }
+    }
+  }
+}
+
+// Экраны шире 768px
+@media screen and (min-width: 768px) {
+  .swiper {
+    width: auto;
+    overflow: hidden;
+
+    &-pagination {
+      display: none;
+    }
+  }
+}

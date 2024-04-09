@@ -1,0 +1,83 @@
+@import 'variables.scss';
+
+.brends {
+  letter-spacing: -0.2px;
+  overflow: hidden;
+
+  &__title {
+    text-transform: uppercase;
+    line-height: 24px;
+    color: $font-color-gray;
+    padding: 16px;
+    background-image: linear-gradient(
+      to right,
+      $light-gray-color,
+      $white-color
+    );
+  }
+
+  &__swiper {
+    margin-top: 16px;
+    padding: 0 16px 66px;
+  }
+
+  &__btn {
+    display: none;
+  }
+}
+
+// Экраны шире 768px
+@media screen and (min-width: 768px) {
+  .brends {
+    &__swiper {
+      height: 160px;
+      margin: 24px 0;
+      padding: 0 24px;
+
+      &.-non-slider {
+        & .swiper-wrapper {
+          transform: inherit !important;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(224px, 1fr));
+          gap: 16px 24px;
+        }
+
+        & .swiper-slide {
+          width: inherit !important;
+        }
+
+        & .swiper-slide-duplicate {
+          display: none;
+        }
+      }
+    }
+
+    &__btn {
+      display: flex;
+      margin: 0 24px;
+    }
+  }
+
+  /* Стили после нажатия кнопки "Показать все" */
+  .show .brends__swiper {
+    height: auto;
+    overflow: visible;
+    margin-bottom: 46px;
+  }
+}
+
+// Экраны шире 1440px
+@media screen and (min-width: 1440px) {
+  .brends__swiper.-non-slider .swiper-wrapper {
+    grid-template-columns: repeat(4, minmax(240px, 1fr));
+    column-gap: 32px;
+  }
+
+  .brends__swiper {
+    padding: 0 32px;
+  }
+
+  .brends__viewButton {
+    padding-bottom: 34px;
+  }
+}
