@@ -1,3 +1,5 @@
+GitHub Pages: https://nanaevayulia.github.io/KataAcademy_module_1.6/
+
 # Webpack Static Site Starter Kit
 
 ## Требования к проекту
