@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Сайт CPS</title>
+  <link href="style.css" rel="stylesheet"></head>
+  <body>
+    <header class="header">
+      <div class="header__part">
+        <button type="button" class="header__icon icon icon--menu visually-hidden">Открыть меню</button>
+        <div class="header__logo logo">
+          <a href=""><img src="img/logo.svg" alt="Логотип CPS" class="logo__img"></a>
+        </div>
+      </div>
+      <div class="header__part">
+        <button type="button" class="header__icon icon icon--phone visually-hidden">Заказать звонок</button>
+        <button type="button" class="header__icon icon icon--chat visually-hidden">Обратная связь</button>
+        <button type="button" class="header__icon icon icon--profile visually-hidden">Вход в личный кабинет</button>
+        <div class="header__separator"></div>
+        <a href="#" class="header__icon icon icon--settings visually-hidden">Оставить заявку</a>
+        <a href="#" class="header__icon icon icon--checkstatus visually-hidden">Статус ремонта</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="services hide">
+        <header class="services__header">
+          <h1 class="services__title">Услуги и сервисы</h1>
+          <div class="services__menu">
+            <a href="#" class="services__icon services__icon--settings">Оставить заявку</a>
+            <a href="#" class="services__icon services__icon--checkstatus">Статус ремонта</a>
+          </div>
+        </header>
+        <nav class="services__navigation">
+          <ul class="navigation">
+            <li><a href="#" class="navigation__item navigation__item--active">Ремонтируемые устройства</a></li>
+            <li><a href="#" class="navigation__item">Ремонтируемые бренды</a></li>
+            <li><a href="#" class="navigation__item">Дополнительные услуги</a></li>
+            <li><a href="#" class="navigation__item">Цены на услуги</a></li>
+            <li><a href="#" class="navigation__item">Адреса сервисных центров</a></li>
+            <li><a href="#" class="navigation__item">Специальные цены</a></li>
+            <li><a href="#" class="navigation__item">Отзывы</a></li>
+          </ul>
+        </nav>
+        <section class="services__info">
+          <div class="services__infotext">
+            <div class="services__text">
+              <p>
+                Мы являемся авторизованным сервисным центром по&nbsp;ремонту
+                техники Dell. Только у&nbsp;нас вы можете отремонтировать свой
+                ноутбук Dell с&nbsp;официальной гарантией производителя.
+              </p>
+              <br>
+              <p>
+                Мы успешно работаем с&nbsp;<time datetime="1992-01-01">1992&nbsp;года</time>
+                и&nbsp;заслужили репутацию надежного партнера,
+                что&nbsp;подтверждает большое количество постоянных клиентов. Мы
+                гордимся тем, что&nbsp;к&nbsp;нам обращаются
+                по&nbsp;рекомендациям и, в&nbsp;свою очередь, советуют нас
+                родным и&nbsp;близким.
+              </p>
+            </div>
+            <button type="button" class="services__btn btn-show">Читать далее</button>
+          </div>
+          <img src="./img/photo_CPS.jpg" class="services__photo" alt="">
+        </section>
+      </section>
+
+      <section class="brends hide">
+        <h2 class="brends__title">Ремонт техники различных брендов</h2>
+        <div class="brends__swiper swiper">
+          <div class="swiper-wrapper">
+            <a href="#" class="swiper-slide">
+              <img src="./img/logo_lenovo.svg" alt="Lenovo" title="Lenovo">
+            </a>
+            <a href="#" class="swiper-slide">
+              <img src="./img/logo_samsung.svg" alt="Samsung" title="Samsung">
+            </a>
+            <a href="#" class="swiper-slide">
+              <img src="./img/logo_apple.svg" alt="Apple" title="Apple">
+            </a>
+            <a href="#" class="swiper-slide">
+              <img src="./img/logo_bosch.svg" alt="Bosch" title="Bosch">
+            </a>
+            <a href="#" class="swiper-slide">
+              <img src="./img/logo_hp.svg" alt="HP" title="HP">
+            </a>
+            <a href="#" class="swiper-slide">
+              <img src="./img/logo_acer.svg" alt="Acer" title="Acer">
+            </a>
+            <a href="#" class="swiper-slide">
+              <img src="./img/logo_viewSonic.svg" alt="ViewSonic" title="ViewSonic">
+            </a>
+            <a href="#" class="swiper-slide">
+              <img src="./img/logo_sony.svg" alt="Sony" title="Sony">
+            </a>
+            <a href="#" class="swiper-slide">
+              <img src="./img/logo_lenovo.svg" alt="Lenovo" title="Lenovo">
+            </a>
+            <a href="#" class="swiper-slide">
+              <img src="./img/logo_samsung.svg" alt="Samsung" title="Samsung">
+            </a>
+            <a href="#" class="swiper-slide">
+              <img src="./img/logo_bosch.svg" alt="Bosch" title="Bosch">
+            </a>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <button type="button" class="brends__btn btn-show">Показать все</button>
+      </section>
+    </main>
+  <script type="text/javascript" src="./js/bundle.js"></script></body>
+</html>
