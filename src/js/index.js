@@ -8,6 +8,7 @@ import { Pagination } from 'swiper/modules'
 // Кнопка "Показать все"
 var section = document.querySelector('main')
 var buttonShowAll = section.querySelector('.btn-show')
+var buttonText = buttonShowAll.textContent
 
 buttonShowAll.addEventListener('click', function () {
   section.classList.toggle('hide')
@@ -17,11 +18,11 @@ buttonShowAll.addEventListener('click', function () {
   var buttonShow = document.querySelector('.show')
 
   if (buttonShow) {
-    buttonShowAll.textContent = 'Скрыть'
+    buttonShowAll.textContent = buttonText
   }
 
   if (buttonHide) {
-    buttonShowAll.textContent = 'Показать все'
+    buttonShowAll.textContent = 'Скрыть'
   }
 })
 

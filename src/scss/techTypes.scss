@@ -28,7 +28,32 @@
 @media screen and (min-width: 768px) {
   .techTypes {
     &__swiper {
+      width: auto;
+      overflow: hidden;
+      height: 160px;
+      margin: 24px 0;
       padding: 0 24px;
+
+      &-pagination {
+        display: none;
+      }
+
+      &.-non-slider {
+        & .swiper-wrapper {
+          transform: inherit !important;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(224px, 1fr));
+          gap: 16px 24px;
+        }
+
+        & .swiper-slide {
+          width: inherit !important;
+        }
+
+        & .swiper-slide-duplicate {
+          display: none;
+        }
+      }
     }
 
     &__btn {
@@ -50,6 +75,10 @@
   .techTypes {
     &__swiper {
       padding: 0 32px;
+      &.-non-slider .swiper-wrapper {
+        grid-template-columns: repeat(4, minmax(240px, 1fr));
+        column-gap: 32px;
+      }
     }
 
     &__btn {

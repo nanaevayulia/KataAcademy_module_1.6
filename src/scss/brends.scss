@@ -5,18 +5,6 @@
   overflow: hidden;
   margin-bottom: 8px;
 
-  &__title {
-    text-transform: uppercase;
-    line-height: 24px;
-    color: $font-color-gray;
-    padding: 16px;
-    background-image: linear-gradient(
-      to right,
-      $light-gray-color,
-      $white-color
-    );
-  }
-
   &__card {
     height: 72px;
 
@@ -37,7 +25,32 @@
 @media screen and (min-width: 768px) {
   .brends {
     &__swiper {
+      width: auto;
+      overflow: hidden;
+      height: 160px;
+      margin: 24px 0;
       padding: 0 24px;
+
+      &-pagination {
+        display: none;
+      }
+
+      &.-non-slider {
+        & .swiper-wrapper {
+          transform: inherit !important;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(224px, 1fr));
+          gap: 16px 24px;
+        }
+
+        & .swiper-slide {
+          width: inherit !important;
+        }
+
+        & .swiper-slide-duplicate {
+          display: none;
+        }
+      }
     }
 
     &__btn {
@@ -59,6 +72,10 @@
   .brends {
     &__swiper {
       padding: 0 32px;
+      &.-non-slider .swiper-wrapper {
+        grid-template-columns: repeat(4, minmax(240px, 1fr));
+        column-gap: 32px;
+      }
     }
 
     &__btn {

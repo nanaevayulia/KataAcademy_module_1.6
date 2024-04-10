@@ -66,9 +66,9 @@ img {
 
 // Экраны шире 1440px
 @media screen and (min-width: 1440px) {
-  main,
-  header,
-  footer {
+  .header,
+  .main,
+  .footer {
     max-width: 1120px;
   }
 }

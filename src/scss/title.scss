@@ -5,3 +5,19 @@
   padding: 16px;
   background-image: linear-gradient(to right, $light-gray-color, $white-color);
 }
+
+// Экраны шире 768px
+@media screen and (min-width: 768px) {
+  .title {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+// Экраны шире 1440px
+@media screen and (min-width: 1440px) {
+  .title {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
