@@ -1,0 +1,46 @@
+.footer {
+  line-height: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $font-color-gray;
+  padding: 0 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 19px;
+}
+
+// Экраны шире 768px
+@media screen and (min-width: 768px) {
+  .footer {
+    margin: 0 24px 25px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 35px;
+
+    &__item {
+      min-width: 218px;
+      max-width: 330px;
+
+      &:first-child {
+        text-align: start;
+      }
+
+      &:last-child {
+        text-align: end;
+      }
+    }
+  }
+}
+
+// Экраны шире 1440px
+@media screen and (min-width: 1440px) {
+  .footer {
+    margin: 0 32px 25px;
+
+    &__item {
+      min-width: 330px;
+    }
+  }
+}

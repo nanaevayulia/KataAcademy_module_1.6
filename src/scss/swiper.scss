@@ -1,8 +1,10 @@
 @import 'variables.scss';
 
 .swiper {
+  margin-top: 16px;
+  padding: 0 16px 44px;
+
   &-slide {
-    height: 72px;
     padding: 16px;
     border: 1px solid $border-gray-color;
     border-radius: 6px;
@@ -12,17 +14,10 @@
     align-items: center;
     flex-shrink: 0;
     box-sizing: border-box;
-
-    &::after {
-      content: '';
-      background: url(../img/go.svg) no-repeat;
-      width: 40px;
-      height: 40px;
-    }
   }
 
   &-pagination {
-    margin-bottom: 26px;
+    margin-bottom: 8px;
 
     &-bullet {
       height: 12px;
@@ -41,9 +36,41 @@
   .swiper {
     width: auto;
     overflow: hidden;
+    height: 160px;
+    margin: 24px 0;
 
     &-pagination {
       display: none;
     }
+
+    &.-non-slider {
+      & .swiper-wrapper {
+        transform: inherit !important;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(224px, 1fr));
+        gap: 16px 24px;
+      }
+
+      & .swiper-slide {
+        width: inherit !important;
+      }
+
+      & .swiper-slide-duplicate {
+        display: none;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    margin: 0 24px;
+  }
+}
+
+// Экраны шире 1440px
+@media screen and (min-width: 1440px) {
+  .swiper.-non-slider .swiper-wrapper {
+    grid-template-columns: repeat(4, minmax(240px, 1fr));
+    column-gap: 32px;
   }
 }

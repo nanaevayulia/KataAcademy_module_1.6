@@ -30,9 +30,42 @@ if (document.body.matchMedia < 768) {
   swiper.init(swiper)
 }
 
-const swiper = new Swiper('.brends__swiper', {
+const swiper = new Swiper('.swiper', {
   spaceBetween: 16,
-  width: 240,
+  width: 272,
+
+  modules: [Pagination],
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+
+  keyboard: {
+    enabled: true,
+    onlyInViewPort: true
+  },
+
+  on: {
+    resize: function enableOnlyMobile(swiper) {
+      if (768 < window.innerWidth) {
+        swiper.disable()
+        swiper.el.classList.add('-non-slider')
+      } else {
+        swiper.enable()
+        swiper.el.classList.remove('-non-slider')
+      }
+    }
+  }
+})
+
+// Инициализация свайпера
+if (document.body.matchMedia < 768) {
+  priceSwiper.init(swiper)
+}
+const priceSwiper = new Swiper('.price__swiper', {
+  spaceBetween: 16,
+  width: 292,
 
   modules: [Pagination],
 
