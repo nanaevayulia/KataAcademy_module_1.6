@@ -27,13 +27,12 @@ html {
 
 body {
   min-width: 320px;
-  max-width: 1500px;
+  max-width: 1700px;
   margin: auto;
   font-family: 'TT Lakes', 'Arial', sans-serif;
   font-size: 16px;
   line-height: 0;
   color: $font-color-black;
-  background-color: $light-gray-color;
 }
 
 a {
@@ -58,6 +57,10 @@ img {
   object-fit: cover;
 }
 
+.basic {
+  background-color: $light-gray-color;
+}
+
 .visually-hidden {
   line-height: 0;
   font-size: 0;
@@ -66,9 +69,7 @@ img {
 
 // Экраны шире 1440px
 @media screen and (min-width: 1440px) {
-  .header,
-  .main,
-  .footer {
-    max-width: 1120px;
+  .container {
+    display: flex;
   }
 }

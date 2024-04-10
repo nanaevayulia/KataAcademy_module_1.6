@@ -6,9 +6,9 @@ import Swiper from 'swiper'
 import { Pagination } from 'swiper/modules'
 
 // Кнопка "Показать все"
-var section = document.querySelector('main')
-var buttonShowAll = section.querySelector('.btn-show')
-var buttonText = buttonShowAll.textContent
+const section = document.querySelector('main')
+const buttonShowAll = section.querySelector('.btn-show')
+const buttonText = buttonShowAll.textContent
 
 buttonShowAll.addEventListener('click', function () {
   section.classList.toggle('hide')
@@ -91,4 +91,19 @@ const priceSwiper = new Swiper('.price__swiper', {
       }
     }
   }
+})
+
+//Открыть меню
+const buttonMenu = document.querySelector('.icon--menu')
+const menu = document.querySelector('.burger-menu')
+const buttonClose = menu.querySelector('.icon--close')
+
+buttonMenu.addEventListener('click', function (evt) {
+  evt.stopPropagation()
+
+  menu.classList.add('show__burger-menu')
+})
+
+buttonClose.addEventListener('click', function () {
+  menu.classList.remove('show__burger-menu')
 })
