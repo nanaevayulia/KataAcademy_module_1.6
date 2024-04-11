@@ -5,28 +5,7 @@ import '../scss/style.scss'
 import Swiper from 'swiper'
 import { Pagination } from 'swiper/modules'
 
-// Кнопка "Показать все"
-const section = document.querySelector('.content')
-const buttonShowAll = section.querySelector('.btn-show')
-const buttonText = buttonShowAll.textContent
-
-buttonShowAll.addEventListener('click', function () {
-  section.classList.toggle('hide')
-  section.classList.toggle('show')
-
-  var buttonHide = document.querySelector('.hide')
-  var buttonShow = document.querySelector('.show')
-
-  if (buttonShow) {
-    buttonShowAll.textContent = buttonText
-  }
-
-  if (buttonHide) {
-    buttonShowAll.textContent = 'Скрыть'
-  }
-})
-
-// Инициализация свайпера 1
+// Инициализация свайпера
 if (document.body.matchMedia < 768) {
   swiper.init(swiper)
 }
@@ -60,9 +39,49 @@ const swiper = new Swiper('.swiper', {
   }
 })
 
+// Кнопка "Показать все"
+const services = document.querySelector('.services')
+const brends = document.querySelector('.brends')
+const techTypes = document.querySelector('.techTypes')
+const buttonShowServices = services.querySelector('.btn-show--services')
+const buttonShowBrends = brends.querySelector('.btn-show--brends')
+const buttonShowTechTypes = techTypes.querySelector('.btn-show--techTypes')
+const buttonHideServices = services.querySelector('.btn-hide--services')
+const buttonHideBrends = brends.querySelector('.btn-hide--brends')
+const buttonHideTechTypes = techTypes.querySelector('.btn-hide--techTypes')
+
+function funcButtonShow() {
+  return function (button, section) {
+    button.addEventListener('click', function () {
+      section.classList.remove('hide')
+      section.classList.add('show')
+    })
+  }
+}
+
+function funcButtonHide() {
+  return function (button, section) {
+    button.addEventListener('click', function () {
+      section.classList.add('hide')
+      section.classList.remove('show')
+    })
+  }
+}
+
+const buttonShow = funcButtonShow()
+const buttonHide = funcButtonHide()
+
+buttonShow(buttonShowServices, services)
+buttonShow(buttonShowBrends, brends)
+buttonShow(buttonShowTechTypes, techTypes)
+
+buttonHide(buttonHideServices, services)
+buttonHide(buttonHideBrends, brends)
+buttonHide(buttonHideTechTypes, techTypes)
+
 // Popups
-const menu = document.querySelector('.burger-menu')
 const content = document.querySelector('.content')
+const menu = document.querySelector('.burger-menu')
 const substrate = document.querySelector('.substrate')
 const popupCall = document.querySelector('.popup--call')
 const popupFeedback = document.querySelector('.popup--feedback')
@@ -135,7 +154,11 @@ buttonPhoneMenu.addEventListener('click', function () {
   substrate.classList.add('show__substrate')
   popupFeedback.classList.remove('show__popup--feedback')
 
-  closePopup(popupCall, buttonPhoneMenu)
+  if (window.innerWidth >= 1440) {
+    closePopup(popupCall, buttonPhoneContent)
+  } else {
+    closePopup(popupCall, buttonPhoneMenu)
+  }
 })
 
 buttonPhoneContent.addEventListener('click', function () {
@@ -152,7 +175,11 @@ buttonFeedbackMenu.addEventListener('click', function () {
   substrate.classList.add('show__substrate')
   popupCall.classList.remove('show__popup--call')
 
-  closePopup(popupFeedback, buttonFeedbackMenu)
+  if (window.innerWidth >= 1440) {
+    closePopup(popupFeedback, buttonFeedbackContent)
+  } else {
+    closePopup(popupFeedback, buttonFeedbackMenu)
+  }
 })
 
 buttonFeedbackContent.addEventListener('click', function () {

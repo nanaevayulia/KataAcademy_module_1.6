@@ -59,13 +59,6 @@
       margin: 0 24px;
     }
   }
-
-  /* Стили после нажатия кнопки "Показать все" */
-  .show .brends__swiper {
-    height: auto;
-    overflow: visible;
-    margin-bottom: 46px;
-  }
 }
 
 // Экраны шире 1440px
@@ -83,4 +76,11 @@
       padding-bottom: 34px;
     }
   }
+}
+
+/* Стили после нажатия кнопки "Показать все" */
+.show .brends__swiper {
+  height: auto;
+  overflow: visible;
+  margin-bottom: 46px;
 }

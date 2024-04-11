@@ -53,6 +53,12 @@
   }
 }
 
+/* Стили после нажатия кнопки "Показать все" */
+.show .services__text {
+  max-height: none;
+  overflow: visible;
+}
+
 // Экраны шире 768px
 @media screen and (min-width: 768px) {
   .services {
