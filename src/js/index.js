@@ -32,8 +32,8 @@ if (document.body.matchMedia < 768) {
 }
 
 const swiper = new Swiper('.swiper', {
+  slidesPerView: 'auto',
   spaceBetween: 16,
-  width: 272,
 
   modules: [Pagination],
 
@@ -60,39 +60,7 @@ const swiper = new Swiper('.swiper', {
   }
 })
 
-// Инициализация свайпера 2
-if (document.body.matchMedia < 768) {
-  priceSwiper.init(swiper)
-}
-const priceSwiper = new Swiper('.price__swiper', {
-  spaceBetween: 16,
-  width: 292,
-
-  modules: [Pagination],
-
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  },
-
-  keyboard: {
-    enabled: true,
-    onlyInViewPort: true
-  },
-
-  on: {
-    resize: function enableOnlyMobile(swiper) {
-      if (768 < window.innerWidth) {
-        swiper.disable()
-        swiper.el.classList.add('-non-slider')
-      } else {
-        swiper.enable()
-        swiper.el.classList.remove('-non-slider')
-      }
-    }
-  }
-})
-
+// Popups
 const menu = document.querySelector('.burger-menu')
 const content = document.querySelector('.content')
 const substrate = document.querySelector('.substrate')
