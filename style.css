@@ -482,6 +482,7 @@ button {
   font-family: inherit;
   font-weight: inherit;
   line-height: inherit;
+  color: inherit;
   cursor: pointer; }
 
 input {
@@ -832,7 +833,8 @@ img {
   overflow: hidden;
   margin-bottom: 8px; }
   .brends__card {
-    height: 72px; }
+    height: 72px;
+    width: 240px; }
     .brends__card::after {
       content: '';
       background: url(./static/go.svg) no-repeat;
@@ -887,7 +889,8 @@ img {
     flex-direction: column;
     font-weight: 500;
     align-items: start;
-    line-height: 24px; }
+    line-height: 24px;
+    width: 240px; }
     .techTypes__card::after {
       content: '';
       background: url(./static/go.svg) no-repeat;
@@ -940,7 +943,8 @@ img {
   .price__head {
     display: none; }
   .price__card {
-    height: 200px; }
+    height: 200px;
+    width: 260px; }
   .price__text {
     line-height: 20px;
     letter-spacing: 0.2px;
