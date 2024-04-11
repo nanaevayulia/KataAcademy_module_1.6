@@ -35,6 +35,10 @@ body {
   color: $font-color-black;
 }
 
+:root {
+  --swiper-theme-color: $font-color-black;
+}
+
 a {
   display: inline-block;
   color: inherit;
@@ -51,14 +55,42 @@ button {
   cursor: pointer;
 }
 
+input {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 img {
   max-width: 100%;
   display: block;
   object-fit: cover;
 }
 
-.basic {
+.content {
   background-color: $light-gray-color;
+}
+
+.stop-scrolling {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.substrate {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: $white-color, $alpha: 0.9);
+  position: fixed;
+  z-index: 10;
+  display: none;
+}
+
+.show__substrate {
+  display: block;
 }
 
 .visually-hidden {

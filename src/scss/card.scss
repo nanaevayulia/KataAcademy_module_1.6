@@ -23,29 +23,7 @@
   }
 
   &__btn {
-    border-radius: 16px;
-    background-color: $pink-color;
-    color: $white-color;
-    line-height: 24px;
-    font-size: 12px;
-    letter-spacing: -0.15px;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding: 4px 8px 4px 12px;
-    display: flex;
-    transition: 0.2s ease-in-out;
-
-    &::after {
-      content: '';
-      background: url(../img/arrow_more_white.svg);
-      margin-left: 8px;
-      width: 24px;
-      height: 24px;
-    }
-
-    &:hover {
-      box-shadow: 0 0 15px $pink-color;
-    }
+    @include btn-pink;
   }
 }
 

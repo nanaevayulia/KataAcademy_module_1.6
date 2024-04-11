@@ -40,6 +40,8 @@
 // Экраны шире 768px
 @media screen and (min-width: 768px) {
   .header {
+    padding: 0 24px;
+
     &__separator {
       display: block;
     }

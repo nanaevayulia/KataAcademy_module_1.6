@@ -1,16 +1,15 @@
 .burger-menu {
   display: none;
-  height: 100%;
   position: fixed;
-  z-index: 2;
+  z-index: 11;
+  top: 0;
+  left: 0;
 
   &__container {
     min-width: 320px;
     width: 100vw;
     height: 100vh;
     padding: 0 16px 32px;
-    top: 0;
-    left: 0;
     display: flex;
     flex-direction: column;
     letter-spacing: -0.2px;
@@ -137,11 +136,6 @@
   }
 }
 
-// Показать меню
-.show__burger-menu {
-  display: block;
-}
-
 // Экраны шире 768px
 @media screen and (min-width: 768px) {
   .burger-menu {
@@ -180,6 +174,7 @@
   .burger-menu {
     display: block;
     position: static;
+    z-index: 9;
 
     &__container {
       box-shadow: none;
@@ -200,4 +195,9 @@
       }
     }
   }
+}
+
+// Показать меню
+.show__burger-menu {
+  display: block;
 }
