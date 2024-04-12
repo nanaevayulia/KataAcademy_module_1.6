@@ -806,6 +806,15 @@ img {
   color: #7e7e82;
   box-sizing: border-box;
   padding-bottom: 10px; }
+  .navigation::after {
+    background-image: linear-gradient(to right, transparent, #f8f8f8);
+    position: absolute;
+    z-index: 3;
+    width: 24px;
+    right: 0;
+    border-color: transparent;
+    content: '';
+    height: 40px; }
   .navigation:first-child {
     padding-left: 16px; }
   .navigation__item {
@@ -829,6 +838,8 @@ img {
     overflow: visible;
     flex-wrap: wrap;
     padding-bottom: 0; }
+    .navigation::after {
+      display: none; }
     .navigation:first-child {
       padding-left: 0; }
     .navigation__item {
@@ -838,6 +849,15 @@ img {
   letter-spacing: -0.2px;
   overflow: hidden;
   margin-bottom: 8px; }
+  .brends .swiper::before {
+    background-image: linear-gradient(to right, transparent, #f8f8f8);
+    position: absolute;
+    z-index: 3;
+    width: 24px;
+    right: 0;
+    border-color: transparent;
+    content: '';
+    height: 80px; }
   .brends__card {
     height: 72px;
     width: 240px !important; }
@@ -850,6 +870,8 @@ img {
     display: none; }
 
 @media screen and (min-width: 768px) {
+  .brends .swiper::before {
+    display: none; }
   .brends__swiper {
     width: auto;
     overflow: hidden;
@@ -891,6 +913,15 @@ img {
   letter-spacing: -0.2px;
   overflow: hidden;
   margin-bottom: 8px; }
+  .techTypes .swiper::before {
+    background-image: linear-gradient(to right, transparent, #f8f8f8);
+    position: absolute;
+    z-index: 3;
+    width: 24px;
+    right: 0;
+    border-color: transparent;
+    content: '';
+    height: 166px; }
   .techTypes__card {
     height: 160px;
     flex-direction: column;
@@ -908,6 +939,8 @@ img {
     display: none; }
 
 @media screen and (min-width: 768px) {
+  .techTypes .swiper::before {
+    display: none; }
   .techTypes__swiper {
     width: auto;
     overflow: hidden;
@@ -948,6 +981,15 @@ img {
 .price {
   overflow: hidden;
   margin-bottom: 40px; }
+  .price .swiper::before {
+    background-image: linear-gradient(to right, transparent, #f8f8f8);
+    position: absolute;
+    z-index: 3;
+    width: 24px;
+    right: 0;
+    border-color: transparent;
+    content: '';
+    height: 200px; }
   .price__head {
     display: none; }
   .price__card {
@@ -970,6 +1012,8 @@ img {
       vertical-align: middle; }
 
 @media screen and (min-width: 768px) {
+  .price .swiper::before {
+    display: none; }
   .price__title {
     margin-bottom: 16px; }
   .price__head {
@@ -1023,6 +1067,9 @@ img {
     margin: 0 24px 16px; }
   .price__btn {
     margin: 0 24px; } }
+
+.price .swiper-pagination-bullet:last-child {
+  display: none; }
 
 .card {
   flex-direction: column;
