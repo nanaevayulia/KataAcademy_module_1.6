@@ -9,6 +9,11 @@
   box-sizing: border-box;
   padding-bottom: 10px;
 
+  &::after {
+    @include gradient;
+    height: 40px;
+  }
+
   &:first-child {
     padding-left: 16px;
   }
@@ -46,6 +51,10 @@
     overflow: visible;
     flex-wrap: wrap;
     padding-bottom: 0;
+
+    &::after {
+      display: none;
+    }
 
     &:first-child {
       padding-left: 0;

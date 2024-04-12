@@ -2,6 +2,13 @@
   overflow: hidden;
   margin-bottom: 40px;
 
+  & .swiper {
+    &::before {
+      @include gradient;
+      height: 200px;
+    }
+  }
+
   &__head {
     display: none;
   }
@@ -33,13 +40,15 @@
   }
 }
 
-// .price .swiper-slide-active {
-//   width: 272px !important;
-// }
-
 // Экраны шире 768px
 @media screen and (min-width: 768px) {
   .price {
+    & .swiper {
+      &::before {
+        display: none;
+      }
+    }
+
     &__title {
       margin-bottom: 16px;
     }
@@ -123,4 +132,8 @@
       margin: 0 24px;
     }
   }
+}
+
+.price .swiper-pagination-bullet:last-child {
+  display: none;
 }

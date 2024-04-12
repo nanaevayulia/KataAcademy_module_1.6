@@ -3,6 +3,13 @@
   overflow: hidden;
   margin-bottom: 8px;
 
+  & .swiper {
+    &::before {
+      @include gradient;
+      height: 166px;
+    }
+  }
+
   &__card {
     height: 160px;
     flex-direction: column;
@@ -28,6 +35,12 @@
 // Экраны шире 768px
 @media screen and (min-width: 768px) {
   .techTypes {
+    & .swiper {
+      &::before {
+        display: none;
+      }
+    }
+
     &__swiper {
       width: auto;
       overflow: hidden;

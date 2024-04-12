@@ -5,6 +5,13 @@
   overflow: hidden;
   margin-bottom: 8px;
 
+  & .swiper {
+    &::before {
+      @include gradient;
+      height: 80px;
+    }
+  }
+
   &__card {
     height: 72px;
     width: 240px !important;
@@ -25,6 +32,12 @@
 // Экраны шире 768px
 @media screen and (min-width: 768px) {
   .brends {
+    & .swiper {
+      &::before {
+        display: none;
+      }
+    }
+
     &__swiper {
       width: auto;
       overflow: hidden;
