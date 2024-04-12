@@ -540,35 +540,17 @@ img {
   .btn-show:hover {
     transform: scale(1.1); }
 
-.hide .btn-hide {
-  display: none; }
-
 /* Стили после нажатия кнопки "Показать все" */
-.show .btn-show {
-  display: none; }
-
-.show .btn-hide {
-  line-height: 24px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  transition: transform 0.3s; }
-  .show .btn-hide::before {
-    content: '';
-    background: url(./static/arrows.svg) no-repeat;
-    margin-right: 8px;
-    width: 24px;
-    height: 24px;
-    rotate: 180deg; }
-  .show .btn-hide:hover {
-    transform: scale(1.1); }
+.show .btn-show::before {
+  rotate: 180deg; }
 
 .title {
   text-transform: uppercase;
   line-height: 24px;
   color: #7e7e82;
   padding: 16px;
-  background-image: linear-gradient(to right, #f8f8f8, #ffffff); }
+  background-image: linear-gradient(to right, #f8f8f8, #ffffff);
+  border-top: 1px solid #d9fff5; }
 
 @media screen and (min-width: 768px) {
   .title {
@@ -586,7 +568,8 @@ img {
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-  padding: 0 16px; }
+  padding: 0 16px;
+  border-bottom: 1px solid #d9fff5; }
   .header__part {
     display: flex;
     align-items: center;
@@ -727,7 +710,8 @@ img {
 /* Стили после нажатия кнопки "Показать все" */
 .show .services__text {
   max-height: none;
-  overflow: visible; }
+  overflow: visible;
+  margin-bottom: 46px; }
 
 @media screen and (min-width: 768px) {
   .services {
@@ -831,7 +815,7 @@ img {
     transition: 0.2s; }
     .navigation__item--active {
       background-color: #ffffff;
-      border: 2px solid #41f6d7; }
+      border: 2px solid #b8ffec; }
     .navigation__item:hover {
       background-color: rgba(255, 255, 255, 0.6);
       border: 2px solid rgba(65, 246, 215, 0.4); }
@@ -856,7 +840,7 @@ img {
   margin-bottom: 8px; }
   .brends__card {
     height: 72px;
-    width: 240px; }
+    width: 240px !important; }
     .brends__card::after {
       content: '';
       background: url(./static/go.svg) no-repeat;
@@ -895,7 +879,7 @@ img {
       -moz-column-gap: 32px;
            column-gap: 32px; }
   .brends__btn {
-    padding-bottom: 34px; } }
+    margin: 0 32px 32px; } }
 
 /* Стили после нажатия кнопки "Показать все" */
 .show .brends__swiper {
@@ -913,7 +897,7 @@ img {
     font-weight: 500;
     align-items: start;
     line-height: 24px;
-    width: 240px; }
+    width: 240px !important; }
     .techTypes__card::after {
       content: '';
       background: url(./static/go.svg) no-repeat;
@@ -953,7 +937,7 @@ img {
       -moz-column-gap: 32px;
            column-gap: 32px; }
   .techTypes__btn {
-    padding-bottom: 34px; } }
+    margin: 0 32px 32px; } }
 
 /* Стили после нажатия кнопки "Показать все" */
 .show .techTypes__swiper {
@@ -968,7 +952,7 @@ img {
     display: none; }
   .price__card {
     height: 200px;
-    width: 260px; }
+    width: 260px !important; }
   .price__text {
     line-height: 20px;
     letter-spacing: 0.2px;
