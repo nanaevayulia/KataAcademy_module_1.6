@@ -7,7 +7,7 @@
 
   &__card {
     height: 72px;
-    width: 240px;
+    width: 240px !important;
 
     &::after {
       content: '';

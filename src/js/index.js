@@ -11,6 +11,7 @@ if (document.body.matchMedia < 768) {
 }
 
 const swiper = new Swiper('.swiper', {
+  width: 272,
   slidesPerView: 'auto',
   spaceBetween: 16,
 

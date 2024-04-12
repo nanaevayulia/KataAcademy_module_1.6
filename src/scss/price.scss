@@ -8,7 +8,7 @@
 
   &__card {
     height: 200px;
-    width: 260px;
+    width: 260px !important;
   }
 
   &__text {
@@ -32,6 +32,10 @@
     }
   }
 }
+
+// .price .swiper-slide-active {
+//   width: 272px !important;
+// }
 
 // Экраны шире 768px
 @media screen and (min-width: 768px) {
