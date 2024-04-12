@@ -4,6 +4,7 @@
   color: $font-color-gray;
   padding: 16px;
   background-image: linear-gradient(to right, $light-gray-color, $white-color);
+  border-top: 1px solid $light-lagoon-color;
 }
 
 // Экраны шире 768px

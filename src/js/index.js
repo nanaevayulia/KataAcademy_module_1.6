@@ -39,45 +39,72 @@ const swiper = new Swiper('.swiper', {
   }
 })
 
-// Кнопка "Показать все"
+// // Кнопка "Показать все"
 const services = document.querySelector('.services')
 const brends = document.querySelector('.brends')
 const techTypes = document.querySelector('.techTypes')
-const buttonShowServices = services.querySelector('.btn-show--services')
-const buttonShowBrends = brends.querySelector('.btn-show--brends')
-const buttonShowTechTypes = techTypes.querySelector('.btn-show--techTypes')
-const buttonHideServices = services.querySelector('.btn-hide--services')
-const buttonHideBrends = brends.querySelector('.btn-hide--brends')
-const buttonHideTechTypes = techTypes.querySelector('.btn-hide--techTypes')
+const buttonServices = services.querySelector('.btn-show--services')
+const buttonBrends = brends.querySelector('.btn-show--brends')
+const buttonTechTypes = techTypes.querySelector('.btn-show--techTypes')
 
-function funcButtonShow() {
-  return function (button, section) {
+function funcButtonShow(button) {
+  const buttonText = button.innerText
+
+  return function (
+    button,
+    section,
+    classHide,
+    classShow,
+    buttonHide,
+    buttonShow
+  ) {
     button.addEventListener('click', function () {
-      section.classList.remove('hide')
-      section.classList.add('show')
+      section.classList.toggle('hide')
+      section.classList.toggle('show')
+      button.classList.toggle(classShow)
+      button.classList.toggle(classHide)
+
+      const buttonHideSection = section.querySelector(buttonHide)
+      const buttonShowSection = section.querySelector(buttonShow)
+
+      if (buttonHideSection) {
+        buttonHideSection.innerText = 'Скрыть'
+      }
+      if (buttonShowSection) {
+        buttonShowSection.innerText = buttonText
+      }
     })
   }
 }
 
-function funcButtonHide() {
-  return function (button, section) {
-    button.addEventListener('click', function () {
-      section.classList.add('hide')
-      section.classList.remove('show')
-    })
-  }
-}
+const buttonShowServices = funcButtonShow(buttonServices)
+const buttonShowBrends = funcButtonShow(buttonBrends)
+const buttonShowtechTypes = funcButtonShow(buttonTechTypes)
 
-const buttonShow = funcButtonShow()
-const buttonHide = funcButtonHide()
-
-buttonShow(buttonShowServices, services)
-buttonShow(buttonShowBrends, brends)
-buttonShow(buttonShowTechTypes, techTypes)
-
-buttonHide(buttonHideServices, services)
-buttonHide(buttonHideBrends, brends)
-buttonHide(buttonHideTechTypes, techTypes)
+buttonShowServices(
+  buttonServices,
+  services,
+  'btn-hide--services',
+  'btn-show--services',
+  '.btn-hide--services',
+  '.btn-show--services'
+)
+buttonShowBrends(
+  buttonBrends,
+  brends,
+  'btn-hide--brends',
+  'btn-show--brends',
+  '.btn-hide--brends',
+  '.btn-show--brends'
+)
+buttonShowtechTypes(
+  buttonTechTypes,
+  techTypes,
+  'btn-hide--techTypes',
+  'btn-show--techTypes',
+  '.btn-hide--techTypes',
+  '.btn-show--techTypes'
+)
 
 // Popups
 const content = document.querySelector('.content')
@@ -122,29 +149,21 @@ function closePopup(popup, button) {
 
   const close = document.querySelector('.close')
 
-  if (popup === popupCall && button === buttonPhoneMenu) {
-    close.addEventListener('click', function () {
-      popup.classList.remove('show__popup--call')
-      buttonClose.classList.remove('close')
-    })
-  } else if (popup === popupCall && button === buttonPhoneContent) {
+  if (popup === popupCall) {
     close.addEventListener('click', function () {
       popup.classList.remove('show__popup--call')
       substrate.classList.remove('show__substrate')
       content.classList.remove('stop-scrolling')
       buttonClose.classList.remove('close')
+      menu.classList.remove('show__burger-menu')
     })
-  } else if (popup === popupFeedback && button === buttonFeedbackMenu) {
-    close.addEventListener('click', function () {
-      popup.classList.remove('show__popup--feedback')
-      buttonClose.classList.remove('close')
-    })
-  } else if (popup === popupFeedback && button === buttonFeedbackContent) {
+  } else if (popup === popupFeedback) {
     close.addEventListener('click', function () {
       popup.classList.remove('show__popup--feedback')
       substrate.classList.remove('show__substrate')
       content.classList.remove('stop-scrolling')
       buttonClose.classList.remove('close')
+      menu.classList.remove('show__burger-menu')
     })
   }
 }
@@ -154,11 +173,7 @@ buttonPhoneMenu.addEventListener('click', function () {
   substrate.classList.add('show__substrate')
   popupFeedback.classList.remove('show__popup--feedback')
 
-  if (window.innerWidth >= 1440) {
-    closePopup(popupCall, buttonPhoneContent)
-  } else {
-    closePopup(popupCall, buttonPhoneMenu)
-  }
+  closePopup(popupCall)
 })
 
 buttonPhoneContent.addEventListener('click', function () {
@@ -166,7 +181,7 @@ buttonPhoneContent.addEventListener('click', function () {
   substrate.classList.add('show__substrate')
   content.classList.add('stop-scrolling')
 
-  closePopup(popupCall, buttonPhoneContent)
+  closePopup(popupCall)
 })
 
 // Открыть/закрыть попап "Обратная связь"
@@ -175,11 +190,7 @@ buttonFeedbackMenu.addEventListener('click', function () {
   substrate.classList.add('show__substrate')
   popupCall.classList.remove('show__popup--call')
 
-  if (window.innerWidth >= 1440) {
-    closePopup(popupFeedback, buttonFeedbackContent)
-  } else {
-    closePopup(popupFeedback, buttonFeedbackMenu)
-  }
+  closePopup(popupFeedback)
 })
 
 buttonFeedbackContent.addEventListener('click', function () {
@@ -187,5 +198,116 @@ buttonFeedbackContent.addEventListener('click', function () {
   substrate.classList.add('show__substrate')
   content.classList.add('stop-scrolling')
 
-  closePopup(popupFeedback, buttonFeedbackContent)
+  closePopup(popupFeedback)
 })
+
+// import 'swiper/swiper.scss'
+// import 'swiper/modules/pagination.scss'
+// import '../scss/style.scss'
+
+// import Swiper from 'swiper'
+// import { Pagination } from 'swiper/modules'
+
+// if (document.body.matchMedia < 768) {
+//   swiper.init(swiper)
+// }
+
+// const swiper = new Swiper('.swiper', {
+//   slidesPerView: 'auto',
+//   spaceBetween: 16,
+//   modules: [Pagination],
+//   pagination: {
+//     el: '.swiper-pagination',
+//     clickable: true
+//   },
+//   keyboard: {
+//     enabled: true,
+//     onlyInViewPort: true
+//   },
+
+//   breakpoints: {
+//     768: {
+//       on: {
+//         resize: function () {
+//           if (swiper.isBeginning && swiper.isEnd) {
+//             swiper.disable()
+//           } else {
+//             swiper.enable()
+//           }
+//         }
+//       }
+//     }
+//   }
+// })
+
+// function toggleSection(button, section, action) {
+//   button.addEventListener('click', function () {
+//     section.classList[action]('show')
+//     section.classList[action]('hide')
+//   })
+// }
+
+// const sections = [
+//   { button: buttonShowServices, section: services, action: 'add' },
+//   { button: buttonShowBrends, section: brends, action: 'add' },
+//   { button: buttonShowTechTypes, section: techTypes, action: 'add' },
+//   { button: buttonHideServices, section: services, action: 'remove' },
+//   { button: buttonHideBrends, section: brends, action: 'remove' },
+//   { button: buttonHideTechTypes, section: techTypes, action: 'remove' }
+// ]
+
+// sections.forEach(({ button, section, action }) => {
+//   toggleSection(button, section, action)
+// })
+
+// function closeAllPopups() {
+//   popupCall.classList.remove('show__popup--call')
+//   popupFeedback.classList.remove('show__popup--feedback')
+//   substrate.classList.remove('show__substrate')
+//   content.classList.remove('stop-scrolling')
+// }
+
+// buttonMenu.addEventListener('click', function () {
+//   menu.classList.toggle('show__burger-menu')
+//   substrate.classList.toggle('show__substrate')
+//   content.classList.toggle('stop-scrolling')
+//   closeAllPopups()
+// })
+
+// function closePopup(popup) {
+//   const buttonClose = popup.querySelector('.icon--close')
+//   buttonClose.classList.add('close')
+//   buttonClose.addEventListener('click', function () {
+//     popup.classList.remove(`show__popup--${popup.classList[1].split('--')[1]}`)
+//     buttonClose.classList.remove('close')
+//     closeAllPopups()
+//   })
+// }
+
+// buttonPhoneMenu.addEventListener('click', function () {
+//   popupCall.classList.toggle('show__popup--call')
+//   substrate.classList.add('show__substrate')
+//   popupFeedback.classList.remove('show__popup--feedback')
+//   closePopup(popupCall)
+// })
+
+// buttonPhoneContent.addEventListener('click', function () {
+//   popupCall.classList.add('show__popup--call')
+//   substrate.classList.add('show__substrate')
+//   content.classList.add('stop-scrolling')
+//   closePopup(popupCall)
+// })
+
+// buttonFeedbackMenu.addEventListener('click', function () {
+//   popupFeedback.classList.toggle('show__popup--feedback')
+//   substrate.classList.add('show__substrate')
+//   popupCall.classList.remove('show__popup--call')
+//   closePopup(popupFeedback)
+// })
+
+// buttonFeedbackContent.addEventListener('click', function () {
+//   popupFeedback.classList.add('show__popup--feedback')
+//   substrate.classList.add('show__substrate')
+//   content.classList.add('stop-scrolling')
+//   closePopup(popupFeedback)
+// })

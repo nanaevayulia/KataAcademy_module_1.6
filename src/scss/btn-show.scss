@@ -18,32 +18,9 @@
   }
 }
 
-.hide .btn-hide {
-  display: none;
-}
-
 /* Стили после нажатия кнопки "Показать все" */
 .show .btn-show {
-  display: none;
-}
-
-.show .btn-hide {
-  line-height: 24px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  transition: transform 0.3s;
-
   &::before {
-    content: '';
-    background: url(../img/arrows.svg) no-repeat;
-    margin-right: 8px;
-    width: 24px;
-    height: 24px;
     rotate: 180deg;
-  }
-
-  &:hover {
-    transform: scale(1.1);
   }
 }
