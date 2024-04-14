@@ -5,28 +5,52 @@ import '../scss/style.scss'
 import Swiper from 'swiper'
 import { Pagination } from 'swiper/modules'
 
-// Инициализация свайпера
+// Инициализация свайпера 240
 if (document.body.matchMedia < 768) {
-  swiper.init(swiper)
+  swiper240.init(swiper)
+  swiper260.init(swiper)
 }
 
-const swiper = new Swiper('.swiper', {
-  width: 272,
-  slidesPerView: 'auto',
+const swiper240 = new Swiper('.swiper--240', {
   spaceBetween: 16,
+  width: 272,
 
   modules: [Pagination],
-
   pagination: {
     el: '.swiper-pagination',
     clickable: true
   },
-
   keyboard: {
     enabled: true,
     onlyInViewPort: true
   },
+  on: {
+    resize: function enableOnlyMobile(swiper) {
+      if (768 < window.innerWidth) {
+        swiper.disable()
+        swiper.el.classList.add('-non-slider')
+      } else {
+        swiper.enable()
+        swiper.el.classList.remove('-non-slider')
+      }
+    }
+  }
+})
 
+// Инициализация свайпера 260
+const swiper260 = new Swiper('.swiper--260', {
+  spaceBetween: 16,
+  width: 292,
+
+  modules: [Pagination],
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewPort: true
+  },
   on: {
     resize: function enableOnlyMobile(swiper) {
       if (768 < window.innerWidth) {
@@ -42,10 +66,10 @@ const swiper = new Swiper('.swiper', {
 
 // // Кнопка "Показать все"
 const services = document.querySelector('.services')
-const brends = document.querySelector('.brends')
+const brands = document.querySelector('.brands')
 const techTypes = document.querySelector('.techTypes')
 const buttonServices = services.querySelector('.btn-show--services')
-const buttonBrends = brends.querySelector('.btn-show--brends')
+const buttonbrands = brands.querySelector('.btn-show--brands')
 const buttonTechTypes = techTypes.querySelector('.btn-show--techTypes')
 
 function funcButtonShow(button) {
@@ -79,7 +103,7 @@ function funcButtonShow(button) {
 }
 
 const buttonShowServices = funcButtonShow(buttonServices)
-const buttonShowBrends = funcButtonShow(buttonBrends)
+const buttonShowbrands = funcButtonShow(buttonbrands)
 const buttonShowtechTypes = funcButtonShow(buttonTechTypes)
 
 buttonShowServices(
@@ -90,13 +114,13 @@ buttonShowServices(
   '.btn-hide--services',
   '.btn-show--services'
 )
-buttonShowBrends(
-  buttonBrends,
-  brends,
-  'btn-hide--brends',
-  'btn-show--brends',
-  '.btn-hide--brends',
-  '.btn-show--brends'
+buttonShowbrands(
+  buttonbrands,
+  brands,
+  'btn-hide--brands',
+  'btn-show--brands',
+  '.btn-hide--brands',
+  '.btn-show--brands'
 )
 buttonShowtechTypes(
   buttonTechTypes,
@@ -250,10 +274,10 @@ buttonFeedbackContent.addEventListener('click', function () {
 
 // const sections = [
 //   { button: buttonShowServices, section: services, action: 'add' },
-//   { button: buttonShowBrends, section: brends, action: 'add' },
+//   { button: buttonShowbrands, section: brands, action: 'add' },
 //   { button: buttonShowTechTypes, section: techTypes, action: 'add' },
 //   { button: buttonHideServices, section: services, action: 'remove' },
-//   { button: buttonHideBrends, section: brends, action: 'remove' },
+//   { button: buttonHidebrands, section: brands, action: 'remove' },
 //   { button: buttonHideTechTypes, section: techTypes, action: 'remove' }
 // ]
 

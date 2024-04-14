@@ -1,6 +1,6 @@
 @import 'variables.scss';
 
-.brends {
+.brands {
   letter-spacing: -0.2px;
   overflow: hidden;
   margin-bottom: 8px;
@@ -14,7 +14,6 @@
 
   &__card {
     height: 72px;
-    width: 240px !important;
 
     &::after {
       content: '';
@@ -31,7 +30,7 @@
 
 // Экраны шире 768px
 @media screen and (min-width: 768px) {
-  .brends {
+  .brands {
     & .swiper {
       &::before {
         display: none;
@@ -76,7 +75,7 @@
 
 // Экраны шире 1440px
 @media screen and (min-width: 1440px) {
-  .brends {
+  .brands {
     &__swiper {
       padding: 0 32px;
       &.-non-slider .swiper-wrapper {
@@ -92,7 +91,7 @@
 }
 
 /* Стили после нажатия кнопки "Показать все" */
-.show .brends__swiper {
+.show .brands__swiper {
   height: auto;
   overflow: visible;
   margin-bottom: 46px;
