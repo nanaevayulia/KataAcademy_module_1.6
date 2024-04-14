@@ -845,11 +845,11 @@ img {
     .navigation__item {
       padding: 6px 20px; } }
 
-.brends {
+.brands {
   letter-spacing: -0.2px;
   overflow: hidden;
   margin-bottom: 8px; }
-  .brends .swiper::before {
+  .brands .swiper::before {
     background-image: linear-gradient(to right, transparent, #f8f8f8);
     position: absolute;
     z-index: 3;
@@ -858,53 +858,52 @@ img {
     border-color: transparent;
     content: '';
     height: 80px; }
-  .brends__card {
-    height: 72px;
-    width: 240px !important; }
-    .brends__card::after {
+  .brands__card {
+    height: 72px; }
+    .brands__card::after {
       content: '';
       background: url(./static/go.svg) no-repeat;
       width: 40px;
       height: 40px; }
-  .brends__btn {
+  .brands__btn {
     display: none; }
 
 @media screen and (min-width: 768px) {
-  .brends .swiper::before {
+  .brands .swiper::before {
     display: none; }
-  .brends__swiper {
+  .brands__swiper {
     width: auto;
     overflow: hidden;
     height: 160px;
     margin: 24px 0;
     padding: 0 24px; }
-    .brends__swiper-pagination {
+    .brands__swiper-pagination {
       display: none; }
-    .brends__swiper.-non-slider .swiper-wrapper {
+    .brands__swiper.-non-slider .swiper-wrapper {
       transform: inherit !important;
       display: grid;
       grid-template-columns: repeat(3, minmax(224px, 1fr));
       gap: 16px 24px; }
-    .brends__swiper.-non-slider .swiper-slide {
+    .brands__swiper.-non-slider .swiper-slide {
       width: inherit !important; }
-    .brends__swiper.-non-slider .swiper-slide-duplicate {
+    .brands__swiper.-non-slider .swiper-slide-duplicate {
       display: none; }
-  .brends__btn {
+  .brands__btn {
     display: flex;
     margin: 0 24px; } }
 
 @media screen and (min-width: 1440px) {
-  .brends__swiper {
+  .brands__swiper {
     padding: 0 32px; }
-    .brends__swiper.-non-slider .swiper-wrapper {
+    .brands__swiper.-non-slider .swiper-wrapper {
       grid-template-columns: repeat(4, minmax(240px, 1fr));
       -moz-column-gap: 32px;
            column-gap: 32px; }
-  .brends__btn {
+  .brands__btn {
     margin: 0 32px 32px; } }
 
 /* Стили после нажатия кнопки "Показать все" */
-.show .brends__swiper {
+.show .brands__swiper {
   height: auto;
   overflow: visible;
   margin-bottom: 46px; }
@@ -927,8 +926,7 @@ img {
     flex-direction: column;
     font-weight: 500;
     align-items: start;
-    line-height: 24px;
-    width: 240px !important; }
+    line-height: 24px; }
     .techTypes__card::after {
       content: '';
       background: url(./static/go.svg) no-repeat;
@@ -993,8 +991,7 @@ img {
   .price__head {
     display: none; }
   .price__card {
-    height: 200px;
-    width: 260px !important; }
+    height: 200px; }
   .price__text {
     line-height: 20px;
     letter-spacing: 0.2px;
@@ -1067,9 +1064,6 @@ img {
     margin: 0 24px 16px; }
   .price__btn {
     margin: 0 24px; } }
-
-.price .swiper-pagination-bullet:last-child {
-  display: none; }
 
 .card {
   flex-direction: column;
